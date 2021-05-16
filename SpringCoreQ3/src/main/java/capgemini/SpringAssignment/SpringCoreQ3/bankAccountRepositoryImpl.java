@@ -1,19 +1,19 @@
 package capgemini.SpringAssignment.SpringCoreQ3;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class bankAccountRepositoryImpl implements bankAccountRepository{
 	
-	bankAccout b1= new bankAccout();
+	@Autowired
+	bankAccout b1;
+
 	public double GetBalance(long accountId) {
-		
-		b1.setAccountBalance(100000);
-		double balance = b1.getAccountBalance();
-		
-		return balance;
+		return accountId;
 	}
 
 	public double updateBalancce(long accountId, double newBalance) {
-		b1.getAccountBalance()-
 		return newBalance;
 	}
+	
 
 }

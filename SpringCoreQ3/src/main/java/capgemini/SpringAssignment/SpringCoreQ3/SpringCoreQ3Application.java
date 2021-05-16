@@ -10,8 +10,11 @@ public class SpringCoreQ3Application {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context=SpringApplication.run(SpringCoreQ3Application.class, args);
 		
-	  bankAccountController b1=	context.getBean(bankAccountController.class);
-	  System.out.println(b1.accountDetails());
+	  bankAccountRepositoryImpl b1=	context.getBean(bankAccountRepositoryImpl.class);
+	  bankAccout b2=	context.getBean(bankAccout.class);
+	  
+	  System.out.println(b1.GetBalance(1000));
+	  System.out.println(b1.updateBalancce(b2.getAccountId(), 100000));
 	}
 
 }

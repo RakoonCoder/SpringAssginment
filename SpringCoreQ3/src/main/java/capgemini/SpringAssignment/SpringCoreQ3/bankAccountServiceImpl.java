@@ -1,32 +1,31 @@
 package capgemini.SpringAssignment.SpringCoreQ3;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class bankAccountServiceImpl implements bankAccountService{
-	bankAccout b1= new bankAccout();
+	@Autowired
+	bankAccout b1;
+	@Autowired
+	bankAccountRepository br;
 
 	public double withdraw(long accountId, double balance) {
-		double a = b1.getAccountBalance() - 1000;
-		b1.setAccountBalance(a);
-		
-		return a;
+		return balance;
 	}
 
 	public double deposit(long accountId, double balance) {
-		double b= b1.accountBalance + 1000;
-		b1.setAccountBalance(b);
-		return b;
+		return br.GetBalance(accountId);
 	}
 
 	public double getBalance(long accountId) {
-		return b1.accountBalance;
-		
+		return br.GetBalance(b1.getAccountId());
 	}
 
 	public boolean fundTransfer(long fromAccount, long toAccount, double amount) {
-		// TODO Auto-generated method stub
 		return false;
 	}
+
+	
 
 }
